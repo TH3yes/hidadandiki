@@ -1,4 +1,4 @@
-* { margin: 0;}
+* {margin: 0;padding: 0;}
 @font-face {
     font-family: "font-undangan";
     src: url(font/GreatVibes-Regular.ttf);
@@ -14,7 +14,7 @@ body {
     align-items: center;
     background-color: purple;
     background-size: 100%;
-    padding: 10px;
+    padding: 4px;
 }
 body .animate-loading {
     position: absolute;
@@ -51,14 +51,25 @@ body #sectionOne {
     bottom: 1000px;
     border-radius: 30px;
     box-shadow: 1px 1px 10px pink;
-    height: 700px;
+    height: 100vh;
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
     animation: scale 1s linear 3s forwards;
 }
 @keyframes scale {
     from {opacity: 0;filter: blur(10px);bottom: 1000px;}
     to {opacity: 1;filter: blur(0);bottom: 0;}
+}
+body #sectionOne .center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 10px 10px black;
+    border-left: 4px solid rgba(128, 0, 128, 0.452);
+    border-right: 4px solid purple;
+    border-radius: 20%;
+    height: 90vh;
+    width: 90%;
 }
 body #sectionOne img:nth-child(1) {
     position: absolute;
@@ -93,8 +104,6 @@ body #sectionOne h4 {
     font-family: "font-undangan";
     font-size: 40px;
     letter-spacing: 2px;
-    animation: flip 2s;
-    
 }
 body #sectionOne h3 {
     background-color: darkviolet;
@@ -108,13 +117,13 @@ body #sectionOne h3:nth-child(4) {
     top: 50px;
     right: -2000px;
     border-radius: 10px 0 0 10px;
-    width: 240px;
+    max-width: 240px;
     animation: fade-rtl 1s linear 4.5s forwards;
 }
 @keyframes fade-rtl {
     from {right: -400px;}
     to {right: 0;}}
-body #sectionOne h3:nth-child(19) {
+body #sectionOne #openI{
     cursor: pointer;
     position: absolute;
     border-radius: 0 10px 10px 0;
@@ -126,7 +135,7 @@ body #sectionOne h3:nth-child(19) {
     from {left: -400px;}
     to {left: 0;}
 }
-body #sectionOne h3:nth-child(19):hover {
+body #sectionOne #openI:hover {
     box-shadow: 1px 1px 5px darkviolet;
     background-color: whitesmoke;
     border: 1px solid darkviolet;
@@ -164,50 +173,55 @@ body #sectionTwo .couple {
     height: 1200px;
 }
 /* PROFIL PICT */
-body #sectionTwo .couple #femalePict {
+body #sectionTwo .couple .profilFemale #femalePict,#malePict{
+    outline: 4px #d9b4ff solid;
+    border: 3px solid black;
     border-radius: 100%;
     width: 200px;
     height: 200px;
 }
-body #sectionTwo .couple #malePict {
-    border-radius: 100%;
-    width: 200px;
-    height: 200px;
-    animation: malepict 1s linear;
-}
-body #sectionTwo .couple img:nth-child(1){
-    right: -4px;
-    top: -20px;
-    width: 250px;
+/* BOX GALERI */
+body #sectionTwo #couple #pictOne, #pictFour{
+    box-shadow: 0px 0px 10px pink;
+    border: 4px solid #d9b4ff;
+    border-radius: 30px;
+    width: 100%;
     height: 250px;
-    position: absolute;
 }
+body #sectionTwo #couple #pictTwo,#pictTree{
+    box-shadow: 0px 0px 10px pink;
+    border: 4px solid #d9b4ff;
+    border-radius: 30px;
+    width: 47%;
+    height: 290px;
+}
+/* BOX JADWAL */
 body #sectionTwo .boxJadwal {
-    color: darkviolet;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 10px;
-    border-radius: 100px;
+    border-radius: 100vh;
     height: 705px;
-    width: 100%;
+    width: 96%;
     max-width: 550px;
 }
 body #sectionTwo .boxJadwal .boxIn {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #d9b4ff;
+    border: 3px solid #d9b4ff;
+    outline: 3px black solid;
+    box-shadow: 0px 0px 40px black;
     border-radius: 100px;
     padding: 10px;
-    height: 500px;
+    height: 80vh;
 }
 body #sectionTwo .boxAkad {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    background-color: purple;
-    color: #d9b4ff;
+    border: 2px solid #d9b4ff;
+    box-shadow: 0px 0px 10px black;
     border-radius: 90px 90px 0 0;
     width: 100%;
     height: 43%;
@@ -216,8 +230,8 @@ body #sectionTwo .boxResepsi {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    background-color: purple;
-    color: #d9b4ff  ;
+    border: 2px solid #d9b4ff;
+    box-shadow: 0px 0px 10px black;
     width: 100%;
     height: 43%;
     border-radius: 0 0 90px 90px;
@@ -225,7 +239,7 @@ body #sectionTwo .boxResepsi {
 body #sectionTwo .boxLokasi {
     cursor: pointer;
     background-color: #d9b4ff;
-    border: 4px solid purple;
+    border: 4px solid #d9b4ff;
     padding: 4px;
     font-size: 20px;
     letter-spacing: 6px;
@@ -248,6 +262,7 @@ body #sectionTwo .boxLokasi a {
     50% {color: purple;}
     100%{color: #d9b4ff;}
 }
+/* BOX TIME */
 body #sectionTwo .boxTime {
     display: flex;
     justify-content: space-evenly;
@@ -314,37 +329,6 @@ body #sectionTwo .time:nth-child(4) {
     from{opacity: 0;transform: translateY(50px);}
     to{opacity: 1;transform: translateY(0px);}
 }
-/* GALERY */
-body #sectionTwo .galeri {
-    position: relative;
-    height: 90px;
-}
-body #sectionTwo img:nth-child(2) {
-    border-radius: 20px;
-    width: 96%;
-    height: 230px;
-}
-body #sectionTwo img:nth-child(4) {
-    position: absolute;
-    left: 8px;
-    top: 450px;
-    border-radius: 20px;
-    width: 47%;
-    height: 240px;
-}
-body #sectionTwo img:nth-child(5) {
-    position: absolute;
-    right: 8px;
-    top: 450px;
-    border-radius: 20px;
-    width: 47%;
-    height: 240px;
-}
-body #sectionTwo img:nth-child(6) {
-    border-radius: 20px;
-    width: 96%;
-    height: 230px;
-}
 /* ICON */
 .fa {
     text-align: center;
@@ -386,8 +370,32 @@ body #sectionTwo img:nth-child(6) {
     transform: translateY(0);
     opacity: 1;
 }
+/* BOX BARCODE */
+body #sectionTwo .box-barcode {
+    z-index: 0;
+    display: none;
+    background-color: whitesmoke;
+    bottom: 150px;
+    width: 88%;
+    max-width: 450px;
+    height: 450px;
+    border-radius: 40px;
+    animation: boxbarcode 0.4s linear;
+}
+@keyframes boxbarcode {
+    from {transform: translateY(600px);opacity: 0;}
+    tp{transform: translateY(0);opacity: 1;}
+}
+body #sectionTwo .hideBarcode{
+    display: block;
+    position: fixed;
+}
+.bhb {
+    color: red;
+}
 /* NAVBAR */
 nav {
+    z-index: 1;
     position: fixed;
     display: flex;
     align-items: center;
@@ -428,15 +436,123 @@ nav div i,i {
     padding: 0;
     color: purple;
 }
-.fa-home:hover, .fa-location-arrow:hover, .fa-venus-mars:hover, .fa-gift:hover{
-    padding: 0;
+nav div i .fa-home:hover, .fa-location-arrow:hover, .fa-venus-mars:hover, .fa-gift:hover{
     color: #d9b4ff;
 }
 /* DARK MODE */
 .activeBtn {
     background-color: #d9b4ff;
 }
-.bodyDM, .boxADM, .boxRDM {
+.darkmode {
     background-color: black;
+    border: 2px solid #d9b4ff;
+    box-shadow: 0px 0px 10px pink;
 }
-/* FOOTER */
+@media only screen and (max-width:500px){
+    /* GALER */
+    body #sectionTwo #couple #pictOne, #pictFour{
+        width: 95%;
+    }
+    body #sectionTwo #couple #pictTwo,#pictTree{
+        height: 200px;
+        width: 45%;
+    }
+}
+@media only screen and (max-width:425px){
+    body #sectionOne h3:nth-child(4){
+        width: 160px;
+        letter-spacing: 0;
+    }
+}
+@media only screen and (max-width:450px){
+    body #sectionOne #openI{
+        width: 180px;
+        letter-spacing: 0;
+        font-size: 19px;
+    }
+    /* BOX TAMPILAN UTAMA */
+    body #sectionOne h4 {
+        font-family: "font-undangan";
+        font-size: 35px;
+        letter-spacing: 2px;
+    }
+    /* BOX TIME */
+    body #sectionTwo .time{
+        width: 90px;
+        height: 90px;
+    }
+    /* GALER */
+    body #sectionTwo #couple #pictOne, #pictFour{
+        width: 90%;
+        height: 220px;
+    }
+    body #sectionTwo #couple #pictTwo,#pictTree{
+        width: 43%;
+        height: 200px;
+    }
+}
+@media only screen and (max-width:400px){
+    body #sectionOne h3:nth-child(4) {
+        width: 130px;
+        font-size: 16px;
+        letter-spacing: 0;
+    }
+    body #sectionOne #openI{
+        width: 150px;
+        letter-spacing: 0;
+        font-size: 16px;
+    }
+    .box-gues h2 {
+        font-size: 20px;
+    }
+    /* BOX TAMPILAN UTAMA */
+    body #sectionOne h4 {
+        font-family: "font-undangan";
+        font-size: 30px;
+        letter-spacing: 2px;
+    }
+    /* BOX TIME */
+    body #sectionTwo .time{
+        width: 80px;
+        height: 80px;
+    }
+    body #sectionTwo .box-barcode {height: 400px;}
+}
+@media only screen and (max-width:350px){
+    /* BOX TIME */
+    body #sectionTwo .time{
+        width: 70px;
+        height: 70px;
+    }
+    body #sectionOne h4 {
+        font-size: 26px;
+    }
+    .box-gues h2 {
+        font-size: 16px;
+    }
+    @keyframes transform1 {
+        from {top: -100px;left: -200px;}
+        to {top: -80px;left: -60px;scale: 100%;}
+    }
+    @keyframes transform2 {
+        from {bottom: -100px;right: -200px;}
+        to {bottom: -50px;right: -50px;scale: 100%;}
+    }
+    body #sectionTwo .box-barcode {height: 350px;}
+}
+
+@media only screen and (max-width:320px){
+    body #sectionOne #openI {
+        width: 110px;
+        font-size: 12px;
+    }
+    body #sectionOne h3:nth-child(4){
+        font-size: 12px;
+        width: 110px;
+    }
+    body .animate-loading {
+        width: 150px;
+        height: 150px;
+    }
+    body #sectionTwo .box-barcode {height: 300px;}
+}
