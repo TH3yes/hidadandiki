@@ -7,7 +7,6 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,6 +37,7 @@ body .animate-loading {
 }
 /* SECTION ONE */
 body #sectionOne {
+    overflow: hiden;
     position: relative;
     display: flex;
     flex-direction: column;
