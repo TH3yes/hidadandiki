@@ -38,7 +38,6 @@ body .animate-loading {
 }
 /* SECTION ONE */
 body #sectionOne {
-    overflow: hidden;
     position: relative;
     display: flex;
     flex-direction: column;
