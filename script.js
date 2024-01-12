@@ -36,9 +36,7 @@ var loop = setInterval(() => {
         clearInterval(loop);
     }
 }, 25)
-
-
-var countDownDate = new Date("feb 18, 2024 18:00:00").getTime();
+var countDownDate = new Date("feb 18, 2024 08:00:00").getTime();
 var x = setInterval(function(){
     var now = new Date().getTime();
     var distance = countDownDate - now;
@@ -59,7 +57,11 @@ var x = setInterval(function(){
 
     if (distance < 0){
         clearInterval(x);
-        boxTime.innerHTML = "HAPPY WEDDING HIDA & DIKI";
+        boxDays.innerHTML = "HAPPY";
+        boxHours.innerHTML = "WEDDING";
+        boxMinutes.innerHTML = "HIDA";
+        boxSeconds.innerHTML = "DIKI";
+        
     }
 })
 function onscroll() {
@@ -76,14 +78,30 @@ function onscroll() {
     }
 }
 window.addEventListener("scroll", onscroll);
-
+// DARK MODE
 var darkMode = document.getElementById("darkMode");
 var boxADM = document.getElementById("boxAkad");
 var boxRDM = document.getElementById("boxResepsi");
-
+var navbar = document.getElementById("myDiv");
 darkMode.addEventListener("click", function(){
+    navbar.classList.toggle("darkmode");
     darkMode.classList.toggle("activeBtn");
-    boxADM.classList.toggle("boxADM");
-    boxRDM.classList.toggle("bodyDM");
-    document.body.classList.toggle("bodyDM");
+    boxADM.classList.toggle("darkmode");
+    boxRDM.classList.toggle("darkmode");
+    document.body.classList.toggle("darkmode");
+})
+
+var gift = document.getElementById("gift");
+var boxBarcode = document.getElementsByClassName("box-barcode");
+
+gift.addEventListener("click", function(){
+    boxBarcode[0].classList.toggle("hideBarcode");
+    var text = boxBarcode[0].getAttribute("class")
+    var y = text.length;
+    console.log(text.length);
+    if (y === 23 ){
+        document.getElementsByClassName("fa-gift")[0].style.color = "#d9b4ff";
+    } else {
+        document.getElementsByClassName("fa-gift")[0].style.color = "purple";
+    }
 })
